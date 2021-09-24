@@ -1,0 +1,199 @@
+:root {
+  --main-bg: hsl(180, 52%, 96%); /*the main background*/
+  --filter-tab: hsl(180, 31%, 95%); /*background color for spans*/
+  --paracolor: hsl(180, 8%, 52%); /*gray color for text*/
+  --title: hsl(180, 14%, 20%); /*h2 color*/
+  --spancolor: hsl(180, 29%, 50%); /*color for spans inside jobs section */
+  --white-color: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+}
+#main-page {
+  max-width: 1440px;
+  background-color: var(--main-bg);
+  padding-bottom: 30px;
+}
+
+header {
+  height: 150px;
+  width: 100%;
+  background-color: var(--spancolor);
+  background-image: url("images/bg-header-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+@media screen and (max-width: 375px) {
+  #main-page {
+    max-width: 375px;
+  }
+  header {
+    background-image: url("images/bg-header-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+/*start of content section*/
+.content {
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+@media screen and (max-width: 375px) {
+  .content {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+/*styles for categories*/
+.category {
+  display: flex;
+  padding: 20px 40px;
+  background-color: var(--white-color);
+  margin-bottom: 30px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 20px var(--spancolor);
+}
+@media screen and (max-width: 375px) {
+  .category {
+    width: 100%;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: block;
+    position: relative;
+    margin-bottom: 70px;
+  }
+}
+.one,
+.two {
+  border-left: 4px solid var(--spancolor);
+}
+
+.image {
+  margin-right: 25px;
+}
+@media screen and (max-width: 375px) {
+  .image {
+    position: absolute;
+    top: -45px;
+    left: 20px;
+  }
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.titles {
+  margin-right: 20px;
+}
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--spancolor);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+@media screen and (max-width: 375px) {
+  .info {
+    display: block;
+  }
+  .titles {
+    margin-right: 0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--paracolor);
+  }
+}
+.new,
+.feature {
+  font-weight: 500;
+  display: inline-block;
+  background-color: var(--spancolor);
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 20px;
+  margin-right: 10px;
+  padding: 4px 5px;
+  border-radius: 20px;
+  text-align: center;
+}
+.feature {
+  background-color: var(--title);
+  color: var(--white-color);
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--title);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  word-spacing: 1px;
+  transition: 0.2s ease;
+}
+h2:hover {
+  color: var(--spancolor);
+}
+.time,
+.kind-of-job,
+.where {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--paracolor);
+  margin-right: 5px;
+}
+.time::after,
+.kind-of-job::after {
+  content: ".";
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--paracolor);
+  margin-left: 5px;
+}
+.jobs span {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--spancolor);
+  background-color: var(--filter-tab);
+  text-align: center;
+  text-transform: capitalize;
+  margin-right: 10px;
+  padding: 4px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border-radius: 3px;
+}
+.jobs span:last-child {
+  margin-right: 0;
+}
+.jobs span:hover {
+  color: var(--white-color);
+  background-color: var(--spancolor);
+}
+@media screen and (max-width: 375px) {
+  .jobs span {
+    margin-bottom: 15px;
+  }
+}
+/*end of categoties*/
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
