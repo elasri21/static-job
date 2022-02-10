@@ -17,9 +17,10 @@ body {
   font-size: 15px;
 }
 #main-page {
+  position: relative;
   max-width: 1440px;
   background-color: var(--main-bg);
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 header {
@@ -30,14 +31,9 @@ header {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-@media screen and (max-width: 375px) {
-  #main-page {
-    max-width: 375px;
-  }
+@media screen and (max-width: 500px) {
   header {
     background-image: url("images/bg-header-mobile.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
 }
 /*start of content section*/
@@ -46,7 +42,25 @@ header {
   margin-left: 100px;
   margin-right: 100px;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 800px) {
+  .content {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content {
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
   .content {
     margin-left: 10px;
     margin-right: 10px;
@@ -54,6 +68,7 @@ header {
 }
 /*styles for categories*/
 .category {
+  position: relative;
   display: flex;
   padding: 20px 40px;
   background-color: var(--white-color);
@@ -61,17 +76,7 @@ header {
   border-radius: 4px;
   box-shadow: 5px 5px 20px var(--spancolor);
 }
-@media screen and (max-width: 375px) {
-  .category {
-    width: 100%;
-    padding-top: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: block;
-    position: relative;
-    margin-bottom: 70px;
-  }
-}
+
 .one,
 .two {
   border-left: 4px solid var(--spancolor);
@@ -80,19 +85,25 @@ header {
 .image {
   margin-right: 25px;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 780px) {
+  .category {
+    padding-top: 60px;
+    margin-bottom: 60px;
+  }
   .image {
     position: absolute;
-    top: -45px;
-    left: 20px;
+    top: -44px;
+    left: 30px;
   }
 }
+
 .info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
 }
+
 .titles {
   margin-right: 20px;
 }
@@ -103,15 +114,19 @@ header {
   margin-right: 10px;
   vertical-align: middle;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 700px) {
+  .titles p span {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
   .info {
     display: block;
   }
   .titles {
-    margin-right: 0;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--paracolor);
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--paracolor);
+    margin-bottom: 20px;
   }
 }
 .new,
@@ -162,7 +177,8 @@ h2:hover {
   color: var(--paracolor);
   margin-left: 5px;
 }
-.jobs span {
+.jobs span,
+.selected span {
   display: inline-block;
   font-size: 13px;
   font-weight: 500;
@@ -176,6 +192,20 @@ h2:hover {
   transition: 0.2s ease;
   border-radius: 3px;
 }
+.selected .close {
+  color: var(--white-color);
+  background-color: var(--spancolor);
+  font-weight: 700;
+  cursor: pointer;
+}
+.selected .close:hover {
+  background-color: var(--title);
+}
+@media screen and (max-width: 1110px) {
+  .jobs span {
+    margin-bottom: 15px;
+  }
+}
 .jobs span:last-child {
   margin-right: 0;
 }
@@ -183,12 +213,31 @@ h2:hover {
   color: var(--white-color);
   background-color: var(--spancolor);
 }
-@media screen and (max-width: 375px) {
-  .jobs span {
-    margin-bottom: 15px;
+
+/*end of categoties*/
+
+/*selected zone*/
+.selected {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 134px;
+  padding: 15px;
+  background-color: var(--white-color);
+  width: 80%;
+  border-radius: 4px;
+}
+@media screen and (max-width: 600px) {
+  .selected {
+    top: 50px;
+    width: 95%;
+  }
+  .selected span {
+    margin-bottom: 10px;
   }
 }
-/*end of categoties*/
+/*selected zone*/
 
 .attribution {
   font-size: 11px;
